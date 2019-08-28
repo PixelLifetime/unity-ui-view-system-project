@@ -126,6 +126,7 @@ public class View : MonoBehaviour
 			GameObject content = new GameObject("[Content]", typeof(RectTransform));
 
 			content.transform.SetParent(this.transform);
+			content.transform.localPosition = Vector3.zero;
 
 			this.content = content.transform as RectTransform;
 

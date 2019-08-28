@@ -34,8 +34,6 @@ public class MainMenuView : InputView
 					this._cameraLookAtTarget.position.z
 				);
 
-			Debug.Log(this._cameraLookAtTarget.position);
-
 			yield return null;
 		}
 	}
@@ -63,20 +61,17 @@ public class MainMenuView : InputView
 #if UNITY_EDITOR
 [CustomEditor(typeof(MainMenuView))]
 [CanEditMultipleObjects]
-public class MainMenuViewEditor : Editor
+public class MainMenuViewEditor : ViewEditor
 {
 #pragma warning disable 0219, 414
 	private MainMenuView _sMainMenuView;
 #pragma warning restore 0219, 414
 
-	private void OnEnable()
+	protected override void OnEnable()
 	{
-		this._sMainMenuView = this.target as MainMenuView;
-	}
+		base.OnEnable();
 
-	public override void OnInspectorGUI()
-	{
-		this.DrawDefaultInspector();
+		this._sMainMenuView = this.target as MainMenuView;
 	}
 }
 #endif
