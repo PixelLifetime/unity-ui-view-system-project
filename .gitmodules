@@ -1,0 +1,3 @@
+[submodule "Assets/ui-view-system"]
+	path = Assets/ui-view-system
+	url = git@github.com:PixelLifetime/ui-view-system.git
